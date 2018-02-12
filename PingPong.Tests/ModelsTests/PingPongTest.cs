@@ -1,52 +1,52 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PingPong;
+using PingPong.Models;
 
 namespace PingPong.Tests
 {
   [TestClass]
   public class PingPongTest
   {
-  //   [TestMethod]
-  //   public void IsLeapYear_NumberDivisibleByFour_True()
-  //   {
-  //     LeapYear testLeapYear = new LeapYear();
-  //     Assert.AreEqual(true, testLeapYear.IsDivisibleByFour(2012));
-  //     Assert.AreEqual(true, testLeapYear.IsDivisibleByFour(2012));
-  //   }
-  //
-  //   [TestMethod]
-  //   public void IsLeapYear_NumberNotDivisibleByFour_False()
-  //   {
-  //     LeapYear testLeapYear = new LeapYear();
-  //     Assert.AreEqual(false, testLeapYear.IsDivisibleByFour(1999));
-  //   }
-  //
-  //   [TestMethod]
-  //   public void IsLeapYear_NumberDivisibleByOneHundred_True()
-  //   {
-  //     LeapYear testLeapYear = new LeapYear();
-  //     Assert.AreEqual(true, testLeapYear.IsDivisibleByOneHundred(2100));
-  //   }
-  //
-  //   [TestMethod]
-  //   public void IsLeapYear_NumberDivisibleByOneHundred_False()
-  //   {
-  //     LeapYear testLeapYear = new LeapYear();
-  //     Assert.AreEqual(false, testLeapYear.IsDivisibleByOneHundred(2004));
-  //   }
-  //
-  //   [TestMethod]
-  //   public void IsLeapYear_NumberDivisibleByFourHundred_True()
-  //   {
-  //     LeapYear testLeapYear = new LeapYear();
-  //     Assert.AreEqual(true, testLeapYear.IsDivisibleByFourHundred(2400));
-  //   }
-  //
-  //   [TestMethod]
-  //   public void IsLeapYear_NumberDivisibleByFourHundred_False()
-  //   {
-  //     LeapYear testLeapYear = new LeapYear();
-  //     Assert.AreEqual(false, testLeapYear.IsDivisibleByFourHundred(2004));
-  //   }
-  // }
+    [TestMethod]
+    public void CheckPing_NumberDivisibleByThree_True()
+    {
+      Assert.AreEqual(true, PingPongs.CheckPing(9));
+      Assert.AreEqual(true, PingPongs.CheckPing(12));
+    }
+
+    [TestMethod]
+    public void CheckPing_NumberDivisibleByThree_False()
+    {
+      Assert.AreEqual(false, PingPongs.CheckPing(8));
+      Assert.AreEqual(false, PingPongs.CheckPing(17));
+    }
+
+    [TestMethod]
+    public void CheckPing_NumberDivisibleByFive_True()
+    {
+      Assert.AreEqual(true, PingPongs.CheckPong(10));
+      Assert.AreEqual(true, PingPongs.CheckPong(15));
+    }
+
+    [TestMethod]
+    public void CheckPing_NumberDivisibleByFive_False()
+    {
+      Assert.AreEqual(false, PingPongs.CheckPong(11));
+      Assert.AreEqual(false, PingPongs.CheckPong(14));
+    }
+
+    [TestMethod]
+    public void CheckPing_NumberDivisibleByThreeAndFive_True()
+    {
+      Assert.AreEqual(true, PingPongs.CheckPingPong(30));
+      Assert.AreEqual(true, PingPongs.CheckPingPong(15));
+    }
+
+    [TestMethod]
+    public void CheckPing_NumberDivisibleByThreeAndFive_False()
+    {
+      Assert.AreEqual(false, PingPongs.CheckPingPong(31));
+      Assert.AreEqual(false, PingPongs.CheckPingPong(14));
+    }
+  }
 }

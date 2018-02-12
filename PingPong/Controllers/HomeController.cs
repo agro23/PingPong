@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 
 namespace PingPong.Controllers
 {
@@ -15,7 +16,7 @@ namespace PingPong.Controllers
     [HttpPost("/")]
     public ActionResult Result()
     {
-      List<string> output = new List{};
+      List<string> output = new List<string>{};
       // string year = Request.Form["year"];
       // bool isLeapYear = LeapYear.IsLeapYear(Int32.Parse(year));
       // string msg = year;

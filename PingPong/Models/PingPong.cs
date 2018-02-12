@@ -1,17 +1,21 @@
-namespace PongPong
+namespace PingPong.Models
 {
-  public class PingPong.Model
+  public static class PingPongs
   // does this need to be model?
   {
-    public static bool IsLeapYear(int year)
+    public static bool CheckPing(int num)
     {
-      if (year % 100 == 0 && year % 400 != 0) {
-        return false;
-      }
-      else
-      {
-        return year % 4 == 0;
-      }
+      return num % 3 == 0;
+    }
+
+    public static bool CheckPong(int num)
+    {
+      return num % 5 == 0;
+    }
+
+    public static bool CheckPingPong(int num)
+    {
+      return num % 15 == 0;
     }
   }
 }
