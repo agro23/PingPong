@@ -45,7 +45,7 @@ A program to test if a given year is a leap year.
 
 * Make a List and display it to the screen
 
-* Use form to ask user for a range 1-99.
+* Use form to ask user for a range 1-150.
 - Expected Input: STRING
 - Expected Output: None
 
@@ -53,7 +53,7 @@ A program to test if a given year is a leap year.
 - Expected Input: None
 - Expected Output: STRING
 
-* validate range <=99 and > 0
+* validate range <=150 and > 0
 - If false return to View with form
 
 * Loop through range (converted to int32)

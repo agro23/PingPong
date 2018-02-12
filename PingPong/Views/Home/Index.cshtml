@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="container well">
-      <h1>Enter a Number Range < 99</h1>
+      <h1>Enter a Number Range < 150</h1>
       <div class="row">
         <form class="form" action="/" method="post">
           <input type="number" name="range" placeholder="Enter a range">
@@ -17,7 +17,10 @@
       <div class="row">
         @if(@Model.Count != 0)
         {
-          <h2>@Model.ToString()</h2>
+          @foreach (var item in @Model)
+          {
+            <h3>@item</h3>
+          }
         }
       </div>
 

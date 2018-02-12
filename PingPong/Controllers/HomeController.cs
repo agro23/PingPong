@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using PingPong.Models;
 
 namespace PingPong.Controllers
 {
@@ -10,24 +11,14 @@ namespace PingPong.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      return View();
+      List<string> output = new List<string>{};
+      return View("Index", output);
     }
 
     [HttpPost("/")]
     public ActionResult Result()
     {
-      List<string> output = new List<string>{};
-      // string year = Request.Form["year"];
-      // bool isLeapYear = LeapYear.IsLeapYear(Int32.Parse(year));
-      // string msg = year;
-      // if (isLeapYear)
-      // {
-      //   msg += " is a leap year!";
-      // }
-      // else
-      // {
-      //   msg += " is not a leap year!";
-      // }
+      List<string> output = PingPongs.GetPingPong(PingPongs.GetRange(Int32.Parse(Request.Form["range"])));
       return View("Index", output);
     }
   }

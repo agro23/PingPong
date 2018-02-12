@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PingPong;
 using PingPong.Models;
+using System.Collections.Generic;
 
 namespace PingPong.Tests
 {
@@ -47,6 +48,16 @@ namespace PingPong.Tests
     {
       Assert.AreEqual(false, PingPongs.CheckPingPong(31));
       Assert.AreEqual(false, PingPongs.CheckPingPong(14));
+    }
+
+    [TestMethod]
+    public void CheckPing_ListContainsNumbers_True()
+    {
+      List<string> numbers = PingPongs.GetRange(6);
+      for (int i = 1; i <= numbers.Count; i++)
+      {
+        Assert.AreEqual(i.ToString(), numbers[i-1]);
+      }
     }
   }
 }
